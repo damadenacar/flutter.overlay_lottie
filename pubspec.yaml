@@ -1,6 +1,6 @@
 name: overlay_lottie
 description: A package that overlays a lottie animation over a widget, during the execution of long tasks
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/damadenacar/flutter.overlay_lottie
 
 environment:
