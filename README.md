@@ -12,19 +12,19 @@ The basic features of this mixing, where used in a widget are:
 
 1. Show a Lottie animation from the beginning of the animation to the end (i.e. 1 repetition)
 
-    ![Overlay Lottie animation 1 repetition ](img/overlay_lottie_1rep.gif)
+    ![Overlay Lottie animation 1 repetition ](https://github.com/damadenacar/flutter.overlay_lottie/raw/main/img/overlay_lottie_1rep.gif)
 
 1. Show a Lottie animation from the beginning of the animation to the end (i.e. a repetition)
 
-    ![Overlay Lottie animation 3 repetitions ](img/overlay_lottie_3reps.gif)
+    ![Overlay Lottie animation 3 repetitions ](https://github.com/damadenacar/flutter.overlay_lottie/raw/main/img/overlay_lottie_3reps.gif)
 
 1. Show a Lottie animation for a limited time (e.g. 2 seconds)
 
-    ![Overlay Lottie animation 2 seconds ](img/overlay_lottie_2secs.gif)
+    ![Overlay Lottie animation 2 seconds ](https://github.com/damadenacar/flutter.overlay_lottie/raw/main/img/overlay_lottie_2secs.gif)
 
 1. Show a Lottie animation during the execution of a function
 
-    ![Overlay Lottie animation during the execution of a function](img/overlay_lottie_function.gif)
+    ![Overlay Lottie animation during the execution of a function](https://github.com/damadenacar/flutter.overlay_lottie/raw/main/img/overlay_lottie_function.gif)
 
 ## Getting started
 
@@ -51,7 +51,6 @@ class _LottieOverlayHomeState extends State<LottieOverlayHome> with TickerProvid
         return Scaffold(
             appBar: null,
             body: buildWithLottieOverlay(
-                context, 
                 animationUrl: "https://assets6.lottiefiles.com/packages/lf20_fj8rlma5.json",
             ),
             child: Center(
@@ -67,7 +66,7 @@ class _LottieOverlayHomeState extends State<LottieOverlayHome> with TickerProvid
 
 That produces the next application:
 
-![Simple demo application](img/overlay_lottie_simple.gif)
+![Simple demo application](https://github.com/damadenacar/flutter.overlay_lottie/raw/main/img/overlay_lottie_simple.gif)
 
 ## Additional information
 
@@ -76,7 +75,7 @@ There are different mechanisms and options to control how and when to show the o
 The interface of the function to build the overlay is the next:
 
 ```dart
-Widget buildWithLottieOverlay(BuildContext context, { 
+Widget buildWithLottieOverlay({ 
       required Widget child, 
       String? animationUrl, 
       Duration? durationPerRepetition, 
@@ -89,7 +88,6 @@ Widget buildWithLottieOverlay(BuildContext context, {
 
 The function somehow defines the default values for the process, but some of them may be overridden when showing the animation.
 
-- __`context`:__ the `BuildContext` received in the `build` function.
 - __`child`:__ the content to show under the overlay.
 - __`animationUrl`:__ the string that points to the Lottie file. If it starts with `https://` or `http://`, it will be created using `Lottie.network`. Otherwise, it will be interpreted as an asset and thus is created using `Lottie.asset`.
 - __`durationPerRepetition`:__ The duration of each repetition. This is useful if you have an animation of (e.g. 4 seconds), but you want it to run in 2 seconds.
