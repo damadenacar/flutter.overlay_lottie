@@ -4,6 +4,7 @@ import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'src/fadeanimation.dart';
 
 /// Mixin that helps to overlay a Lottie animation over a content upon request (i.e. call of [showLottieOverlay], [showLottieOverlayDuring]
 ///   or [showLottieOverlayWhile]). It enables a control on the repetitions of the animation.
@@ -178,7 +179,9 @@ mixin OverlayLottie<T extends StatefulWidget> on TickerProviderStateMixin<T> {
       int defaultNumberOfRepetitions = 1,
       bool blurContent = false,
       double opacity = 0.8,
-      VoidCallback? onHide}) {
+      VoidCallback? onHide,
+      bool fadeIn = true
+    }) {
     // Capture the parameters
     Widget content = child;
     _defaultNumberOfRepetitions = defaultNumberOfRepetitions;
@@ -201,7 +204,7 @@ mixin OverlayLottie<T extends StatefulWidget> on TickerProviderStateMixin<T> {
         );
       }
 
-      LottieBuilder? animation;
+      Widget animation;
 
       // Create the animation, depending on the URL scheme (supported https or a string that represents the asset)
       if (animationUrl.startsWith("https://")) {
@@ -228,6 +231,10 @@ mixin OverlayLottie<T extends StatefulWidget> on TickerProviderStateMixin<T> {
               ..forward();
           },
         );
+      }
+
+      if (fadeIn) {
+        animation = FadeAnimation(child: animation);
       }
 
       // Create the stack with the overlay

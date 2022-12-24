@@ -38,7 +38,7 @@ class _LottieOverlayHomeState extends State<LottieOverlayHome>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                    onPressed: () => showLottieOverlay(repetitions: 1),
+                    onPressed: () => showLottieOverlay(repetitions: 3),
                     child: const Text("show Lottie")),
                 ElevatedButton(
                     onPressed: () {

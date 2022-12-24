@@ -82,7 +82,8 @@ Widget buildWithLottieOverlay({
       int defaultNumberOfRepetitions = 1, 
       bool blurContent = false, 
       double opacity = 0.8,
-      VoidCallback? onHide
+      VoidCallback? onHide,
+      fadeIn = true
     })
 ```
 
@@ -95,6 +96,7 @@ The function somehow defines the default values for the process, but some of the
 - __`blurContent` (defaults to false):__ If set to `true`, the child widget will be blurred (to give the feeling of being non-interactive).
 - __`opacity` (defaults to 0.8):__ If set to a value different than 1, the child widget will be set to semi-transparent by this factor.
 - __`onHide`:__ Callback to call whenever the animation is hidden (whether auto-closed or closed using `hideLottieOverlay` function)
+- __`fadeIn`:__ Whether to add an effect to fade in the animation when it is shown (true fades in; false skips fading).
 
 ### Showing the overlay
 
